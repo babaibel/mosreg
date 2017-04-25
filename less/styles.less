@@ -1190,7 +1190,8 @@ img{
   align-items: start;
   
   &__panel{
-    width: 30%;
+    width: 325px;
+    min-width: 325px;
     border-radius: 5px;
     border: 1px solid #e8e8e8;
     &-topline{
@@ -1212,7 +1213,6 @@ img{
     }
   }
   &__list{
-    width: 70%;
     padding-right: 20px;
     
     &-item{
@@ -1259,28 +1259,24 @@ img{
     margin: 30px 0;
   }
   &__row{
-    margin: 0 -10px;
-    &:after{
-      content: '';
-      display: table;
-      clear: both;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
   }
   &__col{
-    padding: 0 10px;
-    float: left;
     &:first-child{
-      width: 75%;
+      padding-right: 20px;
     }
     &:last-child{
-      width: 25%;
+      min-width: 280px;
+      width: 280px;
     }
   }
  .advantages{
-  display: block;
-  &-wr{
-    padding: 30px 10px;
-  }
+    display: block;
+    &-wr{
+      padding: 30px 10px;
+    }
     &__title{
       font: 29px/31px @font;
       text-align: center;
@@ -1379,17 +1375,6 @@ img{
     }
   }
 
-  .inner-cols{
-    &__col{
-      &:first-child{
-        width: 70%;
-      }
-      &:last-child{
-        width: 30%;
-      }
-    }
-  }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -1479,25 +1464,10 @@ img{
   }
 
   .service-details{
-    &__panel{
-      width: 40%;
-    }
     &__list{
-      width: 60%;
       padding-right: 10px;
       li{
         font-family: @font;
-      }
-    }
-  }
-
-  .inner-cols{
-    &__col{
-      &:first-child{
-        width: 65%;
-      }
-      &:last-child{
-        width: 35%;
       }
     }
   }
@@ -1507,9 +1477,8 @@ img{
 @media (max-width: 767px) {
 
   .alpha {
-      // background: #ee3124 url("../img/alpha-logo-mob.png") no-repeat center 95%;
       border-radius: 5px;
-      padding: 18px 18px 170px 18px;
+      padding: 18px 18px 180px;
       &-logo{
         left: 50%;
         transform: translate(-50%, 0);
@@ -1818,6 +1787,7 @@ img{
     }
 
     &__panel{
+      min-width: 100%;
       &-text{
         font: 16px/20px @fontb;
       }
@@ -1827,10 +1797,10 @@ img{
   .inner-cols{
     &__row{
       margin: 0 0 20px;
+      display: block;
     }
     &__col{
       width: 100%!important;
-      float: none!important;
       padding: 0!important;
     }
     .advantages__item{
@@ -1898,7 +1868,8 @@ img{
   }
 
   .alpha{
-    padding: 10px 10px 45%;
+    // padding: 10px 10px 45%;
+    padding: 10px 10px 180px;
     background-size: 85%;
   }
 

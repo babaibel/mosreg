@@ -1029,7 +1029,8 @@ img {
   align-items: start;
 }
 .service-details__panel {
-  width: 30%;
+  width: 325px;
+  min-width: 325px;
   border-radius: 5px;
   border: 1px solid #e8e8e8;
 }
@@ -1051,7 +1052,6 @@ img {
   margin-bottom: 0;
 }
 .service-details__list {
-  width: 70%;
   padding-right: 20px;
 }
 .service-details__list-item {
@@ -1091,22 +1091,16 @@ img {
   margin: 30px 0;
 }
 .inner-cols__row {
-  margin: 0 -10px;
-}
-.inner-cols__row:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-.inner-cols__col {
-  padding: 0 10px;
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 .inner-cols__col:first-child {
-  width: 75%;
+  padding-right: 20px;
 }
 .inner-cols__col:last-child {
-  width: 25%;
+  min-width: 280px;
+  width: 280px;
 }
 .inner-cols .advantages {
   display: block;
@@ -1193,12 +1187,6 @@ img {
     width: 100%;
     padding: 0;
   }
-  .inner-cols__col:first-child {
-    width: 70%;
-  }
-  .inner-cols__col:last-child {
-    width: 30%;
-  }
 }
 @media screen and (min-width: 768px) {
   html,
@@ -1269,27 +1257,17 @@ img {
     padding: 2px 25px 0;
     text-transform: uppercase;
   }
-  .service-details__panel {
-    width: 40%;
-  }
   .service-details__list {
-    width: 60%;
     padding-right: 10px;
   }
   .service-details__list li {
     font-family: 'LatoWeb', sans-serif;
   }
-  .inner-cols__col:first-child {
-    width: 65%;
-  }
-  .inner-cols__col:last-child {
-    width: 35%;
-  }
 }
 @media (max-width: 767px) {
   .alpha {
     border-radius: 5px;
-    padding: 18px 18px 170px 18px;
+    padding: 18px 18px 180px;
   }
   .alpha-logo {
     left: 50%;
@@ -1557,15 +1535,18 @@ img {
     font: 16px/20px 'LatoWeb', sans-serif;
     margin-bottom: 10px;
   }
+  .service-details__panel {
+    min-width: 100%;
+  }
   .service-details__panel-text {
     font: 16px/20px 'LatoWebBold', sans-serif;
   }
   .inner-cols__row {
     margin: 0 0 20px;
+    display: block;
   }
   .inner-cols__col {
     width: 100%!important;
-    float: none!important;
     padding: 0!important;
   }
   .inner-cols .advantages__item {
@@ -1618,7 +1599,7 @@ img {
     font: 20px/22px 'LatoWebBold', sans-serif;
   }
   .alpha {
-    padding: 10px 10px 45%;
+    padding: 10px 10px 180px;
     background-size: 85%;
   }
   .alpha__form {
