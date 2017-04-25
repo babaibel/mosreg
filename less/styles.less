@@ -65,10 +65,23 @@ img{
   text-align: center;
 }
 
-.h3-title{
+.h3-title,
+.h2-title{
   font: 29px/31px @fontb;
   color: #000000;
   margin: 0 0 25px;
+  padding: 0;
+  text-align: center;
+
+  &--left{
+    text-align: left;
+  }
+}
+
+.h1-title{
+  font: 38px/40px @fontb;
+  color: #000000;
+  margin: 0 0 20px;
   padding: 0;
   text-align: center;
 }
@@ -178,6 +191,33 @@ img{
       &.active {
         background: #354c97;
       }
+    }
+  }
+}
+
+.recommend{
+
+  &-wr{
+    margin: 30px 0;
+  }
+  &__item{
+    background-color: #ebebeb;
+    border-radius: 5px;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+
+    &-text{
+      font: 16px/20px @font;
+      margin-bottom: 30px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &-image{
+      display: block;
+      float: right;
+      margin-left: 30px;
+      max-width: 150px;
     }
   }
 }
@@ -324,14 +364,6 @@ img{
     transition: 0.4s;
   }
 
-  // &.fixed{
-  //   position: fixed;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.48);
-  // }
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -398,6 +430,20 @@ img{
     width: 37px;
   }
 
+}
+
+.green-btn{
+  display: inline-block;
+  background: #7cc576;
+  border-radius: 3px;
+  font: 11px/25px @fontb;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0 18px;
+  &:hover{
+    background-color: lighten(#7cc576, 5%)
+  }
 }
 
 .logo{
@@ -509,7 +555,7 @@ img{
 .director{
   &-wr{
     text-align: center;
-    padding: 50px 0 55px;
+    margin: 50px 0 55px;
   }
 
   &-btn{
@@ -639,6 +685,20 @@ img{
     &:hover{
       background-color: lighten(#7cc576, 5%)
     }
+  }
+  &__row{
+    margin: 0 -12px;
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  &__col{
+    display: block;
+    width: 50%;
+    padding: 0 12px;
+    float: left;
   }
 
   &--left{
@@ -780,13 +840,30 @@ img{
     margin: 0 0 25px;
   }
 
-  background: url(../img/alpha-logo.png) no-repeat 30px center #ee3124;
+  background-color: #ee3124;
   padding: 18px 18px 18px 265px;
   border-radius: 5px;
+  position: relative;
+
+  &-logo{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 
   &__form{
     padding: 35px 40px 35px 345px;
     background: url(../img/alpha-girl.png) no-repeat 30px bottom #fff;
+    &--nobg{
+      background: #fff;
+      padding: 35px 65px;
+      .call-form{
+        &__title{
+          padding-right: 100px;
+        }
+      }
+    }
   }
 
   .call-form{
@@ -796,8 +873,8 @@ img{
     }
   }
 }
-
 .services{
+  margin-bottom: 30px;
   &-wr{
     margin: 35px 0;
   }
@@ -826,6 +903,14 @@ img{
       &.active{
         border: 3px solid #7cc576;
         background: #fff;
+      }
+
+      &--small{
+        font: 18px/24px @fontb;
+        margin: 0 15px 30px 0;
+        &:last-child{
+          margin-right: 0;
+        }
       }
     }
   }
@@ -999,7 +1084,6 @@ img{
     width: 12px;
   }
 }
-
 .popup-block{
   position: relative;
   background: #FFF;
@@ -1068,14 +1152,14 @@ img{
     }
   }
 }
-.h2-popup-title {
+.h2-popup-title{
   font: 29px/31px @fontb;
   color: #000;
   margin: 0;
   padding: 0 35px;
   text-align: center;
 }
-.popup-modal-dismiss {
+.popup-modal-dismiss{
   display: block;
   cursor: pointer;
   position: absolute;
@@ -1089,10 +1173,153 @@ img{
     opacity: .8;
   }
 }
-
 .slick-dots li.slick-active button{
   background: #7cc576;
   border-color: #7cc576;
+}
+.page-text{
+  padding: 0 120px;
+  margin: 25px 0;
+  font: 17px/19px @font;
+  color: #000;
+  text-align: center;
+}
+.service-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  
+  &__panel{
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    &-topline{
+      background: #e8e8e8;
+      padding: 20px 30px;
+      font: 12px/16px @fontb;
+      color: #858585;
+      text-transform: uppercase;
+    }
+    &-body{
+      padding: 20px 30px;
+    }
+    &-text{
+      font: 19px/23px @fontb;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__list{
+    width: 70%;
+    padding-right: 20px;
+    
+    &-item{
+      display: block;
+
+      li{
+        font: 19px/25px @fontb;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.big-green-btn {
+  background: #7cc576;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font: 24px/60px @fontb;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 2px 30px 0;
+  text-transform: uppercase;
+  &:hover{
+    background-color: lighten( #7cc576, 10%);
+  }
+}
+
+.red-border{
+  margin-top: 0!important;
+  &:before{
+    content: '';
+    display: block;
+    height: 4px;
+    margin: 0 15px;
+    background: #ee3124;
+    margin-bottom: 35px;
+  }
+}
+
+.inner-cols{
+  &-wr{
+    margin: 30px 0;
+  }
+  &__row{
+    margin: 0 -10px;
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  &__col{
+    padding: 0 10px;
+    float: left;
+    &:first-child{
+      width: 75%;
+    }
+    &:last-child{
+      width: 25%;
+    }
+  }
+ .advantages{
+  display: block;
+  &-wr{
+    padding: 30px 10px;
+  }
+    &__title{
+      font: 29px/31px @font;
+      text-align: center;
+    }
+     &__item{
+      text-align: center;
+      padding: 0 3%;
+      width: 100%;
+      margin-bottom: 25px;
+      &-image {
+        line-height: 55px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.content-text{
+  font: 16px/20px @font;
+  margin-bottom: 15px;
+}
+
+.vacancy{
+  &__item{
+    margin: 0 0 25px;
+    border-bottom: 1px solid #acacac;
+    padding: 0 0 25px;
+    &-title{
+      font-family: @fontb;
+    }
+    &:last-child{
+      border-bottom: 0;
+    }
+  }
+}
+
+.start-text{
+  text-align: center;
+  margin: 13% 20%;
 }
 
 @media (max-width: 1150px) {
@@ -1109,6 +1336,7 @@ img{
   .services-table__title {
     font: 16px/18px @fontb;
   }
+
 }
 
 @media (max-width: 1023px) {
@@ -1135,7 +1363,33 @@ img{
     height: 31px;
     width: 31px;
   }
-  
+
+  .page-text{
+    padding: 0 90px;
+  }
+
+  .call-form{
+    &__row{
+      margin: 0;
+    }
+    &__col{
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .inner-cols{
+    &__col{
+      &:first-child{
+        width: 70%;
+      }
+      &:last-child{
+        width: 30%;
+      }
+    }
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -1216,14 +1470,53 @@ img{
     width: 70%;
   }
 
+  .big-green-btn {
+    font: 20px/50px "LatoWebBold",sans-serif;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 2px 25px 0;
+    text-transform: uppercase;
+  }
+
+  .service-details{
+    &__panel{
+      width: 40%;
+    }
+    &__list{
+      width: 60%;
+      padding-right: 10px;
+      li{
+        font-family: @font;
+      }
+    }
+  }
+
+  .inner-cols{
+    &__col{
+      &:first-child{
+        width: 65%;
+      }
+      &:last-child{
+        width: 35%;
+      }
+    }
+  }
+
 }
 
 @media (max-width: 767px) {
 
   .alpha {
-      background: #ee3124 url("../img/alpha-logo-mob.png") no-repeat center 95%;
+      // background: #ee3124 url("../img/alpha-logo-mob.png") no-repeat center 95%;
       border-radius: 5px;
       padding: 18px 18px 170px 18px;
+      &-logo{
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 18px;
+        top: auto;
+        width: 135px;
+      }
   }
   .alpha__form {
       background: #ffffff;
@@ -1500,6 +1793,51 @@ img{
     }
   }
 
+  .page-text{
+    padding: 0 20px;
+  }
+
+  .service-details{
+    display: block;
+
+    &__list,
+    &__panel{
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    &__list{
+      padding: 0 0 0 20px;
+      &-item{
+        padding: 0;
+        li{
+          font: 16px/20px @font;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &__panel{
+      &-text{
+        font: 16px/20px @fontb;
+      }
+    }
+  }
+
+  .inner-cols{
+    &__row{
+      margin: 0 0 20px;
+    }
+    &__col{
+      width: 100%!important;
+      float: none!important;
+      padding: 0!important;
+    }
+    .advantages__item{
+      width: 50%;
+    }
+  }
+
 }
 
 @media (max-width: 560px) {
@@ -1583,6 +1921,16 @@ img{
       margin: 0 0 30px;
       float: none;
       width: 100%;
+    }
+  }
+
+  .inner-cols{
+  .advantages{
+      &__item{
+        margin: 0 0 30px;
+        float: none;
+        width: 100%;
+      }
     }
   }
 

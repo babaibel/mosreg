@@ -47,10 +47,22 @@ img {
 .center {
   text-align: center;
 }
-.h3-title {
+.h3-title,
+.h2-title {
   font: 29px/31px 'LatoWebBold', sans-serif;
   color: #000000;
   margin: 0 0 25px;
+  padding: 0;
+  text-align: center;
+}
+.h3-title--left,
+.h2-title--left {
+  text-align: left;
+}
+.h1-title {
+  font: 38px/40px 'LatoWebBold', sans-serif;
+  color: #000000;
+  margin: 0 0 20px;
   padding: 0;
   text-align: center;
 }
@@ -148,6 +160,28 @@ img {
 }
 .navbar-menu__item a.active {
   background: #354c97;
+}
+.recommend-wr {
+  margin: 30px 0;
+}
+.recommend__item {
+  background-color: #ebebeb;
+  border-radius: 5px;
+  padding: 40px 30px;
+  margin-bottom: 20px;
+}
+.recommend__item-text {
+  font: 16px/20px 'LatoWeb', sans-serif;
+  margin-bottom: 30px;
+}
+.recommend__item-text:last-child {
+  margin-bottom: 0;
+}
+.recommend__item-image {
+  display: block;
+  float: right;
+  margin-left: 30px;
+  max-width: 150px;
 }
 @media screen and (min-width: 1024px) {
   ._scrolled .layout__body__inner {
@@ -332,6 +366,19 @@ img {
   margin: 0;
   width: 37px;
 }
+.green-btn {
+  display: inline-block;
+  background: #7cc576;
+  border-radius: 3px;
+  font: 11px/25px 'LatoWebBold', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0 18px;
+}
+.green-btn:hover {
+  background-color: #8dcd88;
+}
 .logo {
   display: inline-block;
   vertical-align: middle;
@@ -422,7 +469,7 @@ img {
 }
 .director-wr {
   text-align: center;
-  padding: 50px 0 55px;
+  margin: 50px 0 55px;
 }
 .director-btn {
   display: inline-block;
@@ -538,6 +585,20 @@ img {
 }
 .call-form__btn:hover {
   background-color: #8dcd88;
+}
+.call-form__row {
+  margin: 0 -12px;
+}
+.call-form__row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.call-form__col {
+  display: block;
+  width: 50%;
+  padding: 0 12px;
+  float: left;
 }
 .call-form--left__title,
 .call-form--left__subtitle,
@@ -655,21 +716,38 @@ img {
   display: block;
 }
 .alpha {
-  background: url(../img/alpha-logo.png) no-repeat 30px center #ee3124;
+  background-color: #ee3124;
   padding: 18px 18px 18px 265px;
   border-radius: 5px;
+  position: relative;
 }
 .alpha-wr {
   margin: 0 0 25px;
+}
+.alpha-logo {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 .alpha__form {
   padding: 35px 40px 35px 345px;
   background: url(../img/alpha-girl.png) no-repeat 30px bottom #ffffff;
 }
+.alpha__form--nobg {
+  background: #fff;
+  padding: 35px 65px;
+}
+.alpha__form--nobg .call-form__title {
+  padding-right: 100px;
+}
 .alpha .call-form {
   text-align: left;
 }
 .alpha .call-form__title {
+  margin-bottom: 30px;
+}
+.services {
   margin-bottom: 30px;
 }
 .services-wr {
@@ -698,6 +776,13 @@ img {
 .services-btns__item.active {
   border: 3px solid #7cc576;
   background: #fff;
+}
+.services-btns__item--small {
+  font: 18px/24px 'LatoWebBold', sans-serif;
+  margin: 0 15px 30px 0;
+}
+.services-btns__item--small:last-child {
+  margin-right: 0;
 }
 .services-slider__item {
   text-align: center;
@@ -931,6 +1016,137 @@ img {
   background: #7cc576;
   border-color: #7cc576;
 }
+.page-text {
+  padding: 0 120px;
+  margin: 25px 0;
+  font: 17px/19px 'LatoWeb', sans-serif;
+  color: #000;
+  text-align: center;
+}
+.service-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.service-details__panel {
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+}
+.service-details__panel-topline {
+  background: #e8e8e8;
+  padding: 20px 30px;
+  font: 12px/16px 'LatoWebBold', sans-serif;
+  color: #858585;
+  text-transform: uppercase;
+}
+.service-details__panel-body {
+  padding: 20px 30px;
+}
+.service-details__panel-text {
+  font: 19px/23px 'LatoWebBold', sans-serif;
+  margin-bottom: 10px;
+}
+.service-details__panel-text:last-child {
+  margin-bottom: 0;
+}
+.service-details__list {
+  width: 70%;
+  padding-right: 20px;
+}
+.service-details__list-item {
+  display: block;
+}
+.service-details__list-item li {
+  font: 19px/25px 'LatoWebBold', sans-serif;
+  margin-bottom: 20px;
+}
+.big-green-btn {
+  background: #7cc576;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font: 24px/60px 'LatoWebBold', sans-serif;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 2px 30px 0;
+  text-transform: uppercase;
+}
+.big-green-btn:hover {
+  background-color: #9ed49a;
+}
+.red-border {
+  margin-top: 0!important;
+}
+.red-border:before {
+  content: '';
+  display: block;
+  height: 4px;
+  margin: 0 15px;
+  background: #ee3124;
+  margin-bottom: 35px;
+}
+.inner-cols-wr {
+  margin: 30px 0;
+}
+.inner-cols__row {
+  margin: 0 -10px;
+}
+.inner-cols__row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.inner-cols__col {
+  padding: 0 10px;
+  float: left;
+}
+.inner-cols__col:first-child {
+  width: 75%;
+}
+.inner-cols__col:last-child {
+  width: 25%;
+}
+.inner-cols .advantages {
+  display: block;
+}
+.inner-cols .advantages-wr {
+  padding: 30px 10px;
+}
+.inner-cols .advantages__title {
+  font: 29px/31px 'LatoWeb', sans-serif;
+  text-align: center;
+}
+.inner-cols .advantages__item {
+  text-align: center;
+  padding: 0 3%;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.inner-cols .advantages__item-image {
+  line-height: 55px;
+  margin-bottom: 15px;
+}
+.content-text {
+  font: 16px/20px 'LatoWeb', sans-serif;
+  margin-bottom: 15px;
+}
+.vacancy__item {
+  margin: 0 0 25px;
+  border-bottom: 1px solid #acacac;
+  padding: 0 0 25px;
+}
+.vacancy__item-title {
+  font-family: 'LatoWebBold', sans-serif;
+}
+.vacancy__item:last-child {
+  border-bottom: 0;
+}
+.start-text {
+  text-align: center;
+  margin: 13% 20%;
+}
 @media (max-width: 1150px) {
   .services-table__cell {
     vertical-align: middle;
@@ -965,6 +1181,23 @@ img {
   .search-form__btn {
     height: 31px;
     width: 31px;
+  }
+  .page-text {
+    padding: 0 90px;
+  }
+  .call-form__row {
+    margin: 0;
+  }
+  .call-form__col {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  .inner-cols__col:first-child {
+    width: 70%;
+  }
+  .inner-cols__col:last-child {
+    width: 30%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1029,12 +1262,41 @@ img {
   .contact-form__item:first-child {
     width: 70%;
   }
+  .big-green-btn {
+    font: 20px/50px "LatoWebBold", sans-serif;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 2px 25px 0;
+    text-transform: uppercase;
+  }
+  .service-details__panel {
+    width: 40%;
+  }
+  .service-details__list {
+    width: 60%;
+    padding-right: 10px;
+  }
+  .service-details__list li {
+    font-family: 'LatoWeb', sans-serif;
+  }
+  .inner-cols__col:first-child {
+    width: 65%;
+  }
+  .inner-cols__col:last-child {
+    width: 35%;
+  }
 }
 @media (max-width: 767px) {
   .alpha {
-    background: #ee3124 url("../img/alpha-logo-mob.png") no-repeat center 95%;
     border-radius: 5px;
     padding: 18px 18px 170px 18px;
+  }
+  .alpha-logo {
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 18px;
+    top: auto;
+    width: 135px;
   }
   .alpha__form {
     background: #ffffff;
@@ -1274,6 +1536,41 @@ img {
     font: 16px/18px 'LatoWeb', sans-serif;
     min-height: 54px;
   }
+  .page-text {
+    padding: 0 20px;
+  }
+  .service-details {
+    display: block;
+  }
+  .service-details__list,
+  .service-details__panel {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .service-details__list {
+    padding: 0 0 0 20px;
+  }
+  .service-details__list-item {
+    padding: 0;
+  }
+  .service-details__list-item li {
+    font: 16px/20px 'LatoWeb', sans-serif;
+    margin-bottom: 10px;
+  }
+  .service-details__panel-text {
+    font: 16px/20px 'LatoWebBold', sans-serif;
+  }
+  .inner-cols__row {
+    margin: 0 0 20px;
+  }
+  .inner-cols__col {
+    width: 100%!important;
+    float: none!important;
+    padding: 0!important;
+  }
+  .inner-cols .advantages__item {
+    width: 50%;
+  }
 }
 @media (max-width: 560px) {
   .footer__item:nth-child(4) {
@@ -1336,6 +1633,11 @@ img {
     display: inline-block;
   }
   .advantages__item {
+    margin: 0 0 30px;
+    float: none;
+    width: 100%;
+  }
+  .inner-cols .advantages__item {
     margin: 0 0 30px;
     float: none;
     width: 100%;

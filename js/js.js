@@ -75,6 +75,30 @@ $(function () {
 
 $(function() {
 
+	var $tab = $('.js-tab');
+
+	if(!$tab.length) return;
+
+	var $tabBtns = $tab.find('.js-tab-btns > div'),
+		$tabTabs = $tab.find('.js-tab-tabs > div');
+
+	function tab(numb) {
+	    $tabTabs.removeClass('active')
+	        .eq(numb).addClass('active');
+
+	    $tabBtns.removeClass('active')
+	        .eq(numb).addClass('active');
+	}
+
+	$tabBtns.bind('click', function () {
+        var index = $(this).index();
+        tab(index);
+    });
+
+});
+
+$(function() {
+
 	var $services = $('.js-services');
 
 	if(!$services.length) return;
