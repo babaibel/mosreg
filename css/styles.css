@@ -100,6 +100,13 @@ img {
 .layout__body__inner {
   padding-bottom: 260px;
 }
+.main-page .layout__body {
+  display: flex;
+}
+.main-page .layout__body__inner {
+  display: flex;
+  flex-direction: column;
+}
 .layout__navbar {
   background-color: #fff;
   height: 100%;
@@ -214,10 +221,10 @@ img {
   ._scrolled .header__item:first-child {
     padding-right: 20px;
   }
-  ._scrolled .logo > img {
+  ._scrolled .header__item .logo > img {
     display: none;
   }
-  ._scrolled .logo > img.logo__small {
+  ._scrolled .header__item .logo > img.logo__small {
     display: block;
   }
   ._scrolled .header-menu__item a {
@@ -232,6 +239,9 @@ img {
     display: inline-block;
     margin-bottom: 0;
     margin-right: 20px;
+  }
+  ._scrolled .header-phone-wr .icontext-phone {
+    background: url("../img/icons/footer-phone-white-ico.png") no-repeat left center;
   }
   ._scrolled .header__item:last-child {
     width: 430px;
@@ -311,7 +321,7 @@ img {
   z-index: 2;
   position: static;
   top: -90px;
-  transition: 0.4s;
+  transition: top 0.4s;
 }
 .header__item {
   padding-right: 17px;
@@ -385,9 +395,11 @@ img {
 }
 .logo img {
   display: block;
+  width: 230px;
 }
 .logo img.logo__small {
   display: none;
+  width: 38px;
 }
 .icontext {
   padding-left: 25px;
@@ -1139,7 +1151,21 @@ img {
 }
 .start-text {
   text-align: center;
-  margin: 13% 20%;
+  margin: 0 20%;
+  padding: 50px 0;
+}
+.start-text-wr {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  margin-top: 0;
+  position: relative;
+}
+.start-text-wr.red-border:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 @media (max-width: 1150px) {
   .services-table__cell {
@@ -1551,6 +1577,10 @@ img {
   }
   .inner-cols .advantages__item {
     width: 50%;
+  }
+  .start-text {
+    text-align: center;
+    margin: 0 5%;
   }
 }
 @media (max-width: 560px) {

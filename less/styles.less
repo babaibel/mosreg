@@ -126,6 +126,16 @@ img{
   }
 }
 
+.main-page{
+  .layout__body{
+    display: flex;
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 .layout__navbar {
   background-color: #fff;
   height: 100%;
@@ -253,13 +263,14 @@ img{
       &:first-child{
         padding-right: 20px;
       }
-    }
-    .logo > img{
-      display: none;
-      &.logo__small{
-        display: block;
+      .logo > img{
+        display: none;
+        &.logo__small{
+          display: block;
+        }
       }
     }
+    
     .header-menu__item a{
       color: #fff;
     }
@@ -268,12 +279,16 @@ img{
       color: #fff;
       font-size: 21px;
       margin-top: 2px;
+      
     }
 
     .header-phone-wr{
       display: inline-block;
       margin-bottom: 0;
       margin-right: 20px;
+      .icontext-phone {
+        background: url("../img/icons/footer-phone-white-ico.png") no-repeat left center;
+      }
     }
 
     .header__item:last-child{
@@ -361,7 +376,7 @@ img{
     z-index: 2;
     position: static;
     top: -90px;
-    transition: 0.4s;
+    transition: top 0.4s;
   }
 
   display: flex;
@@ -449,10 +464,13 @@ img{
 .logo{
   display: inline-block;
   vertical-align: middle;
+
   img{
     display: block;
+    width: 230px;
     &.logo__small{
       display: none;
+      width: 38px;
     }
   }
 }
@@ -1315,7 +1333,22 @@ img{
 
 .start-text{
   text-align: center;
-  margin: 13% 20%;
+  margin: 0 20%;
+  padding: 50px 0;
+
+  &-wr{
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin-top: 0;
+    position: relative;
+    &.red-border:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }
 
 @media (max-width: 1150px) {
@@ -1806,6 +1839,11 @@ img{
     .advantages__item{
       width: 50%;
     }
+  }
+
+  .start-text{
+    text-align: center;
+    margin: 0 5%;
   }
 
 }
