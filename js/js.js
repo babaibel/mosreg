@@ -36,6 +36,8 @@ $(function() {
 		}
 	}
 
+	var swidth=(window.innerWidth-$(window).width());
+
 	$('.js-popup-modal').magnificPopup({
 		type: 'inline',
 		preloader: false,

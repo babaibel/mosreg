@@ -141,6 +141,7 @@ img {
   padding: 0 33px 0 0;
   display: block;
   width: 100%;
+  height: 31px;
 }
 .layout__navbar nav {
   transition: all 300ms ease 0s;
@@ -637,6 +638,7 @@ img {
   border: 0;
   padding: 0 47px 0 15px;
   display: block;
+  height: 47px;
 }
 .search-form__btn {
   position: absolute;
@@ -647,6 +649,7 @@ img {
   right: 0;
   top: 0;
   text-indent: -9999px;
+  padding: 0;
 }
 .search-form__btn:hover {
   opacity: .8;
@@ -1211,6 +1214,7 @@ img {
   .search-form__text {
     font: 15px/31px 'LatoWebBold', sans-serif;
     padding: 0 31px 0 15px;
+    height: 31px;
   }
   .search-form__btn {
     height: 31px;
