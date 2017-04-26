@@ -871,7 +871,8 @@ img{
   }
 
   &__form{
-    padding: 35px 40px 35px 345px;
+    min-height: 445px;
+    padding: 35px 40px 35px 370px;
     background: url(../img/alpha-girl.png) no-repeat 30px bottom #fff;
     &--nobg{
       background: #fff;
@@ -1058,8 +1059,14 @@ img{
       font: 19px/21px @fontb;
 
       &:before{
-        content: '✔';
+        content: '';
         padding-right: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 15px;
+        margin-top: -2px;
+        background: url(../img/icons/v-ico.png) no-repeat left center;
       }
     }
   }
@@ -1149,6 +1156,12 @@ img{
     &:hover{
       background-color: lighten(#fff568, 5%)
     }
+  }
+}
+#callform-modal.popup-block{
+  max-width: 480px;
+  .popup-block__body{
+    padding: 35px;
   }
 }
 .popup-list{
@@ -1408,6 +1421,11 @@ img{
     }
   }
 
+  .alpha__form {
+    background-position: 0 bottom;
+    padding: 35px 30px 35px 340px;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -1439,6 +1457,7 @@ img{
   .alpha__form {
       background: #ffffff;
       padding: 35px 40px;
+      min-height: auto;
   }
 
   .popup-block__body,
@@ -1523,6 +1542,7 @@ img{
   .alpha__form {
       background: #ffffff;
       padding: 35px 40px;
+      min-height: auto;
   }
 
   .services-btns__item{

@@ -1,2 +1,0 @@
-# mosreg
-Mosreg for PaulGreen

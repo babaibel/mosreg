@@ -743,7 +743,8 @@ img {
   transform: translate(0, -50%);
 }
 .alpha__form {
-  padding: 35px 40px 35px 345px;
+  min-height: 445px;
+  padding: 35px 40px 35px 370px;
   background: url(../img/alpha-girl.png) no-repeat 30px bottom #ffffff;
 }
 .alpha__form--nobg {
@@ -899,8 +900,14 @@ img {
   font: 19px/21px 'LatoWebBold', sans-serif;
 }
 .services-table__title:before {
-  content: '✔';
+  content: '';
   padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 15px;
+  margin-top: -2px;
+  background: url(../img/icons/v-ico.png) no-repeat left center;
 }
 .services-other__green-link {
   display: inline-block;
@@ -984,6 +991,12 @@ img {
 }
 .popup-block__yellow-btn:hover {
   background-color: #fff782;
+}
+#callform-modal.popup-block {
+  max-width: 480px;
+}
+#callform-modal.popup-block .popup-block__body {
+  padding: 35px;
 }
 .popup-list {
   display: block;
@@ -1213,6 +1226,10 @@ img {
     width: 100%;
     padding: 0;
   }
+  .alpha__form {
+    background-position: 0 bottom;
+    padding: 35px 30px 35px 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   html,
@@ -1240,6 +1257,7 @@ img {
   .alpha__form {
     background: #ffffff;
     padding: 35px 40px;
+    min-height: auto;
   }
   .popup-block__body,
   .popup-block__footer {
@@ -1305,6 +1323,7 @@ img {
   .alpha__form {
     background: #ffffff;
     padding: 35px 40px;
+    min-height: auto;
   }
   .services-btns__item {
     font: 21px/27px 'LatoWebBold', sans-serif;
