@@ -1,47 +1,54 @@
 var $W = $(window),
-    $D = $(document),
-    $H = $('html'),
-    $B = $('body');
+	$D = $(document),
+	$H = $('html'),
+	$B = $('body'),
+	swidth=(window.innerWidth-$(window).width());
 
 
 $(function() {
 
-    $('.js-map-btn').click(function () {
-    	$(this).toggleClass('active');
-    	if($(this).hasClass('active')){
-    		$(this).text('Свернуть карту');
-    	} else{
+	$('.js-map-btn').click(function () {
+		$(this).toggleClass('active');
+		if($(this).hasClass('active')){
+			$(this).text('Свернуть карту');
+		} else{
 			$(this).text('Развернуть карту');
-    	}
-    	$(this).parent('.map__topline').next('.js-map').slideToggle(200);
-	    return false;
+		}
+		$(this).parent('.map__topline').next('.js-map').slideToggle(200);
+		return false;
 	});
 
 });
 
 $(function() {
 
-    $('.js-form').submit(function () {
-    	var $form = $('.js-form'),
-    		title = $form.data('title'),
-    		text = $form.data('text'),
-    		$popup = $('#after-modal'),
-    		$popupTitle = $popup.find('.js-popup-title'),
-    		$popupText= $popup.find('.js-popup-text');
+	$('.js-form').submit(function () {
+		var $form = $(this),
+			title = $form.data('title'),
+			text = $form.data('text'),
+			$popup = $('#after-modal'),
+			$popupTitle = $popup.find('.js-popup-title'),
+			$popupText= $popup.find('.js-popup-text');
 
-    	$popupTitle.text(title);
-    	$popupText.text(text);
+		//проверка на успешную отправку
 
-    	$.magnificPopup.close();
-    	$.magnificPopup.open({
-    		showCloseBtn: false,
+		$popupTitle.text(title);
+		$popupText.text(text);
+
+		$.magnificPopup.close();
+		$.magnificPopup.open({
+			showCloseBtn: false,
+			callbacks: {
+				open: function() { $('._scrolled .header-wr').css('padding-right', swidth + "px"); }, 
+				close: function() { $('._scrolled .header-wr').css('padding-right', 0); },
+			},
 			items: {
 				src: '#after-modal'
 			},
 			type: 'inline'
 			}, 
 		0);
-	    return false;
+		return false;
 	});
 
 });
@@ -63,8 +70,6 @@ $(function() {
 			$("#js-canvas").addClass("layout__canvas_show");
 		}
 	}
-
-	var swidth=(window.innerWidth-$(window).width());
 
 	$('.js-popup-modal').magnificPopup({
 		type: 'inline',
@@ -107,21 +112,21 @@ $(function() {
 });
 
 $(function () {
-    function setScrolled(){
-        var scroll = $W.scrollTop();
+	function setScrolled(){
+		var scroll = $W.scrollTop();
 
-        if(scroll > 90 ){
-            if(!$B.hasClass('_scrolled')) $B.addClass('_scrolled');
-        }else{
-            $B.removeClass('_scrolled');
-        }
-    }
+		if(scroll > 90 ){
+			if(!$B.hasClass('_scrolled')) $B.addClass('_scrolled');
+		}else{
+			$B.removeClass('_scrolled');
+		}
+	}
 
-    setScrolled();
+	setScrolled();
 
-    $W.scroll(function(){
-        setScrolled();
-    })
+	$W.scroll(function(){
+		setScrolled();
+	})
 
 });
 
@@ -135,17 +140,17 @@ $(function() {
 		$tabTabs = $tab.find('.js-tab-tabs > div');
 
 	function tab(numb) {
-	    $tabTabs.removeClass('active')
-	        .eq(numb).addClass('active');
+		$tabTabs.removeClass('active')
+			.eq(numb).addClass('active');
 
-	    $tabBtns.removeClass('active')
-	        .eq(numb).addClass('active');
+		$tabBtns.removeClass('active')
+			.eq(numb).addClass('active');
 	}
 
 	$tabBtns.bind('click', function () {
-        var index = $(this).index();
-        tab(index);
-    });
+		var index = $(this).index();
+		tab(index);
+	});
 
 });
 
@@ -164,44 +169,44 @@ $(function() {
 		$servicesSliderTabs2 = $services.find('.js-services-slider-tabs2 > div');
 
 	function servicesTabs(numb) {
-        $servicesTabs.removeClass('active')
-            .eq(numb).addClass('active');
+		$servicesTabs.removeClass('active')
+			.eq(numb).addClass('active');
 
-        $servicesBtns.removeClass('active')
-            .eq(numb).addClass('active');
-    }
+		$servicesBtns.removeClass('active')
+			.eq(numb).addClass('active');
+	}
 
-    function servicesSliderTabs(numb) {
-        $servicesSliderTabs.removeClass('active')
-            .eq(numb).addClass('active');
+	function servicesSliderTabs(numb) {
+		$servicesSliderTabs.removeClass('active')
+			.eq(numb).addClass('active');
 
-        $servicesSliderBtns.removeClass('active').parent('div')
-            .eq(numb).children('div').addClass('active');
-    }
+		$servicesSliderBtns.removeClass('active').parent('div')
+			.eq(numb).children('div').addClass('active');
+	}
 
-     function servicesSliderTabs2(numb) {
-        $servicesSliderTabs2.removeClass('active')
-            .eq(numb).addClass('active');
+	 function servicesSliderTabs2(numb) {
+		$servicesSliderTabs2.removeClass('active')
+			.eq(numb).addClass('active');
 
-        $servicesSliderBtns2.removeClass('active').parent('div')
-            .eq(numb).children('div').addClass('active');
-    }
+		$servicesSliderBtns2.removeClass('active').parent('div')
+			.eq(numb).children('div').addClass('active');
+	}
 
-    $servicesBtns.bind('click', function () {
-        var index = $(this).index();
-        servicesTabs(index);
-        $servicesSlider.slick('setPosition');
-    });
+	$servicesBtns.bind('click', function () {
+		var index = $(this).index();
+		servicesTabs(index);
+		$servicesSlider.slick('setPosition');
+	});
 
-    $servicesSliderBtns.bind('click', function () {
-        var index = $(this).parent('div').index();
-        servicesSliderTabs(index);
-    });
+	$servicesSliderBtns.bind('click', function () {
+		var index = $(this).parent('div').index();
+		servicesSliderTabs(index);
+	});
 
-    $servicesSliderBtns2.bind('click', function () {
-        var index = $(this).parent('div').index();
-        servicesSliderTabs2(index);
-    });
+	$servicesSliderBtns2.bind('click', function () {
+		var index = $(this).parent('div').index();
+		servicesSliderTabs2(index);
+	});
 
 
 	$servicesSlider.slick({
@@ -211,32 +216,32 @@ $(function() {
 	  slidesToScroll: 3,
 	  dots: true,
 	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 5
-	      }
-	    },
-	    {
-	      breakpoint: 860,
-	      settings: {
-	        slidesToShow: 4
-	      }
-	    },
-	    {
-	      breakpoint: 780,
-	      settings: {
-	        slidesToShow: 3
-	      }
-	    },
-	    {
-	      breakpoint: 560,
-	      settings: {
-	        centerMode: true,
-	        variableWidth: true,
-	        slidesToShow: 1
-	      }
-	    }
+		{
+		  breakpoint: 1024,
+		  settings: {
+			slidesToShow: 5
+		  }
+		},
+		{
+		  breakpoint: 860,
+		  settings: {
+			slidesToShow: 4
+		  }
+		},
+		{
+		  breakpoint: 780,
+		  settings: {
+			slidesToShow: 3
+		  }
+		},
+		{
+		  breakpoint: 560,
+		  settings: {
+			centerMode: true,
+			variableWidth: true,
+			slidesToShow: 1
+		  }
+		}
 	  ]
 	});
 
