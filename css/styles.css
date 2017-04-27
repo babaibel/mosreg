@@ -753,6 +753,7 @@ img {
 .alpha__form--nobg {
   background: #fff;
   padding: 35px 65px;
+  min-height: auto;
 }
 .alpha__form--nobg .call-form__title {
   padding-right: 100px;
@@ -996,10 +997,12 @@ img {
 .popup-block__yellow-btn:hover {
   background-color: #fff782;
 }
-#callform-modal.popup-block {
+#callform-modal.popup-block,
+#after-modal.popup-block {
   max-width: 480px;
 }
-#callform-modal.popup-block .popup-block__body {
+#callform-modal.popup-block .popup-block__body,
+#after-modal.popup-block .popup-block__body {
   padding: 35px;
 }
 .popup-list {

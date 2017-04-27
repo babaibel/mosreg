@@ -21,6 +21,34 @@ $(function() {
 
 $(function() {
 
+    $('.js-form').submit(function () {
+    	var $form = $('.js-form'),
+    		title = $form.data('title'),
+    		text = $form.data('text'),
+    		$popup = $('#after-modal'),
+    		$popupTitle = $popup.find('.js-popup-title'),
+    		$popupText= $popup.find('.js-popup-text');
+
+    	$popupTitle.text(title);
+    	$popupText.text(text);
+
+    	$.magnificPopup.close();
+    	$.magnificPopup.open({
+    		showCloseBtn: false,
+			items: {
+				src: '#after-modal'
+			},
+			type: 'inline'
+			}, 
+		0);
+	    return false;
+	});
+
+});
+
+
+$(function() {
+
 	$(".js-mob_menu").on("click touchstart",function(e){e.preventDefault(),toggleNav()});
 
 	$(".js-close-menu").click(function () {
@@ -45,8 +73,30 @@ $(function() {
 		showCloseBtn: false,
 		mainClass: 'popup-modal-overlay',
 		callbacks: {
-			open: function() { $('.header__layout.fixed').css('padding-right', swidth + "px"); }, 
-			close: function() { $('.header__layout.fixed').css('padding-right', 0); },
+			open: function() { $('._scrolled .header-wr').css('padding-right', swidth + "px"); }, 
+			close: function() { $('._scrolled .header-wr').css('padding-right', 0); },
+		}
+	});
+
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Загрузка изображения #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">Не удалось загрузить изображение #%curr%</a>',
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		},
+		callbacks: {
+			open: function() { $('._scrolled .header-wr').css('padding-right', swidth + "px"); }, 
+			close: function() { $('._scrolled .header-wr').css('padding-right', 0); },
 		}
 	});
 

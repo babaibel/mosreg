@@ -37,7 +37,7 @@
 								<div class="header__item not-mob">
 									<ul class="header-menu">
 										<li class="header-menu__item">
-											<a href="#">Услуги</a>
+											<a href="#services-modal" class="js-popup-modal">Услуги</a>
 										</li>
 										<li class="header-menu__item">
 											<a href="#">Рекомендации</a>
@@ -201,7 +201,7 @@
 								</div>
 								<div class="contact-form__item">
 									<div class="call-form">
-										<form>
+										<form class="js-form" data-title="Звонок заказан" data-text="Мы перезвоним вам в течении 5 секунд!">
 											<div class="call-form__title">Есть вопросы?</div>
 											<div class="call-form__subtitle">Мы перезвоним вам в течении 5 секунд!</div>
 
@@ -337,6 +337,92 @@
 		</div>
 	</div>
 
+		<div id="services-modal" class="popup-block mfp-hide">
+		<div class="popup-block__header">
+			<h2 class="h2-popup-title">Полный перечень услуг</h2>
+			<div class="popup-modal-dismiss"></div>
+		</div>
+		<div class="popup-block__body cleara">
+			<div class="popup-block__body-item">
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">ООО</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Регистрация ООО</a></li>
+					<li class="popup-list__item"><a href="#">Внесение изменений в ООО</a></li>
+					<li class="popup-list__item"><a href="#">Ликвидация ООО</a></li>
+					<li class="popup-list__item"><a href="#">Реорганизация ООО</a></li>
+				</ul>
+
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">ИП</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Регистрация ИП</a></li>
+					<li class="popup-list__item"><a href="#">Изменение сведений ИП в ЕГРИП</a></li>
+					<li class="popup-list__item"><a href="#">Ликвидация ИП</a></li>
+				</ul>
+			</div>
+			<div class="popup-block__body-item">
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">НКО</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Регистрация НКО</a></li>
+					<li class="popup-list__item"><a href="#">Внесение изменений в НКО</a></li>
+					<li class="popup-list__item"><a href="#">Ликвидация НКО</a></li>
+					<li class="popup-list__item"><a href="#">Реорганизация НКО</a></li>
+				</ul>
+
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">Подразделения</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Регистрация Филиала</a></li>
+					<li class="popup-list__item"><a href="#">Регистрация Представительства</a></li>
+					<li class="popup-list__item"><a href="#">Регистрация обособленного подразделения</a></li>
+				</ul>
+			</div>
+			<div class="popup-block__body-item">
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">АО</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Регистрация АО</a></li>
+					<li class="popup-list__item"><a href="#">Изменения АО</a></li>
+					<li class="popup-list__item"><a href="#">Ликвидация АО</a></li>
+					<li class="popup-list__item"><a href="#">Реорганизация АО</a></li>
+				</ul>
+
+				<ul class="popup-list">
+					<li class="popup-list__item">
+						<span class="title">Недвижимость</span>
+					</li>
+					<li class="popup-list__item"><a href="#">Юридическое сопровождение сделок с недвижимостью</a></li>
+					<li class="popup-list__item"><a href="#">Юридическая проверка квартир</a></li>
+					<li class="popup-list__item"><a href="#">Судебные споры по недвижимости</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="popup-block__footer cleara">
+			<div class="popup-block__body-item">
+				<div class="title">Регистрация ООО</div>
+				<div class="price">от 2 900 р.</div>
+				<a href="#" class="popup-block__yellow-btn">Подробнее</a>
+			</div>
+			<div class="popup-block__body-item">
+				<div class="title">Внесение изменений в ООО</div>
+				<div class="price">от 99 000 р.</div>
+				<a href="#" class="popup-block__yellow-btn">Подробнее</a>
+			</div>
+			<div class="popup-block__body-item">
+				<div class="title">Регистрация НКО</div>
+				<div class="price">от 14 000 р.</div>
+				<a href="#" class="popup-block__yellow-btn">Подробнее</a>
+			</div>
+		</div>
+	</div>
+
 	<div id="callform-modal" class="popup-block mfp-hide">
 		<div class="popup-block__header">
 			<h2 class="h2-popup-title">Заказать звонок</h2>
@@ -344,7 +430,7 @@
 		</div>
 		<div class="popup-block__body cleara">
 			<div class="call-form">
-				<form>
+				<form class="js-form" data-title="Звонок заказан" data-text="Мы перезвоним вам в течении 5 секунд!">
 					<div class="call-form__field-title">ВАШЕ ИМЯ:</div>
 					<div><input type="text" class="call-form__field"></div>
 
@@ -357,6 +443,16 @@
 					
 				</form>
 			</div>
+		</div>
+	</div>
+
+	<div class="popup-block mfp-hide" id="after-modal">
+		<div class="popup-block__header">
+			<div class="h2-popup-title js-popup-title">Ура</div>
+			<div class="popup-modal-dismiss"></div>
+		</div>
+		<div class="popup-block__body cleara">
+			<div class="content-text center js-popup-text"></div>
 		</div>
 	</div>
 

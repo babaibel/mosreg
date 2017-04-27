@@ -37,7 +37,7 @@
 								<div class="header__item not-mob">
 									<ul class="header-menu">
 										<li class="header-menu__item">
-											<a href="#">Услуги</a>
+											<a href="#services-modal" class="js-popup-modal">Услуги</a>
 										</li>
 										<li class="header-menu__item">
 											<a href="#">Рекомендации</a>
@@ -73,7 +73,7 @@
 								<div class="alpha__form">
 
 									<div class="call-form call-form--left">
-										<form>
+										<form class="js-form" data-title="Заявка отправлена" data-text="Мы перезвоним вам в течении 5 секунд!">
 											<div class="call-form__title">
 											Регистрация НКО 
 											в Москве и Московской 
@@ -958,7 +958,7 @@
 										<a href="#" class="services-other__green-link">Регистрация СМИ</a>
 									</div>
 									<div class="center">
-										<a href="#callback-modal" class="services-other__black-link js-popup-modal">Прочие услуги</a>
+										<a href="#" class="services-other__black-link">Прочие услуги</a>
 										<a href="#" class="services-other__black-link">Полезное</a>
 									</div>
 								</div>
@@ -1093,7 +1093,7 @@
 								</div>
 								<div class="contact-form__item">
 									<div class="call-form">
-										<form>
+										<form class="js-form" data-title="Звонок заказан" data-text="Мы перезвоним вам в течении 5 секунд!">
 											<div class="call-form__title">Есть вопросы?</div>
 											<div class="call-form__subtitle">Мы перезвоним вам в течении 5 секунд!</div>
 
@@ -1229,7 +1229,7 @@
 		</div>
 	</div>
 
-	<div id="callback-modal" class="popup-block mfp-hide">
+	<div id="services-modal" class="popup-block mfp-hide">
 		<div class="popup-block__header">
 			<h2 class="h2-popup-title">Полный перечень услуг</h2>
 			<div class="popup-modal-dismiss"></div>
@@ -1322,7 +1322,7 @@
 		</div>
 		<div class="popup-block__body cleara">
 			<div class="call-form">
-				<form>
+				<form class="js-form" data-title="Звонок заказан" data-text="Мы перезвоним вам в течении 5 секунд!">
 					<div class="call-form__field-title">ВАШЕ ИМЯ:</div>
 					<div><input type="text" class="call-form__field"></div>
 
@@ -1335,6 +1335,16 @@
 					
 				</form>
 			</div>
+		</div>
+	</div>
+
+	<div class="popup-block mfp-hide" id="after-modal">
+		<div class="popup-block__header">
+			<div class="h2-popup-title js-popup-title">Ура</div>
+			<div class="popup-modal-dismiss"></div>
+		</div>
+		<div class="popup-block__body cleara">
+			<div class="content-text center js-popup-text"></div>
 		</div>
 	</div>
 
