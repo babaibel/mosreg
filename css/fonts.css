@@ -83,4 +83,6 @@
          url('../fonts/ofont_ru_CenturyGothic.woff') format('woff'),
          url('../fonts/ofont_ru_CenturyGothic.ttf') format('truetype'),
          url('../fonts/ofont_ru_CenturyGothic.svg#ofont_ru_CenturyGothic') format('svg');
+    font-style: normal;
+    font-weight: bold;
 }
