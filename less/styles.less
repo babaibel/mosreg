@@ -22,6 +22,7 @@
 
 @font: 'LatoWeb', sans-serif;
 @fontb: 'LatoWebBold', sans-serif;
+@logo: 'ofont_ru_CenturyGothic', sans-serif;
 
 /* general style*/
 
@@ -270,6 +271,12 @@ img{
           display: block;
         }
       }
+      .logo{
+        &__title,
+        &__text{
+          display: none;
+        }
+      }
     }
     
     .header-menu__item a{
@@ -330,9 +337,19 @@ img{
     color: #767676;
   }
 
-  &-logo{
-    width: 148px;
+  .logo{
+    display: inline-block;
     margin-bottom: 30px;
+
+    &__title{
+      font: 700 20px/22px @logo;
+      letter-spacing: auto;
+      display: inline-block;
+    }
+    &__text{
+      font: 400 8px/10px @logo;
+      letter-spacing: 0.3px;
+    }
   }
 
   &__item{
@@ -477,6 +494,27 @@ img{
       display: none;
       width: 38px;
     }
+  }
+
+  &__title{
+    font: 700 24px/26px @logo;
+    color: #010102;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 0 2px;
+    border-bottom: 2px solid #6f6f6f;
+    letter-spacing: 0.4px;
+    span{
+      color: #a81d35;
+    }
+  }
+  &__text{
+    font: 400 10px/12px @logo;
+    color: #6f6f6f;
+    display: block;
+    text-transform: uppercase;
+    padding-top: 2px;
+    letter-spacing: 0.1px;
   }
 }
 
@@ -2015,7 +2053,7 @@ img{
     br{
       display: none;
     }
-    &-logo{
+    .logo{
       margin-bottom: 20px;
     }
     &-phone{

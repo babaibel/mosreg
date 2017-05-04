@@ -10,7 +10,8 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato-Regular */@font-face {
+/* Webfont: Lato-Regular */
+@font-face {
     font-family: 'LatoWeb';
     src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -22,7 +23,8 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato-Italic */@font-face {
+/* Webfont: Lato-Italic */
+@font-face {
     font-family: 'LatoWebItalic';
     src: url('../fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -34,7 +36,8 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato-Bold */@font-face {
+/* Webfont: Lato-Bold */
+@font-face {
     font-family: 'LatoWebBold';
     src: url('../fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -46,7 +49,8 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato-Black */@font-face {
+/* Webfont: Lato-Black */
+@font-face {
     font-family: 'LatoWebBlack';
     src: url('../fonts/Lato-Black.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -58,7 +62,8 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato-Heavy */@font-face {
+/* Webfont: Lato-Heavy */
+@font-face {
     font-family: 'LatoWebHeavy';
     src: url('../fonts/Lato-Heavy.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Heavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -68,4 +73,14 @@
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'ofont_ru_CenturyGothic';
+    src: url('../fonts/ofont_ru_CenturyGothic.eot');
+    src: url('../fonts/ofont_ru_CenturyGothic.eot') format('embedded-opentype'),
+         url('../fonts/ofont_ru_CenturyGothic.woff2') format('woff2'),
+         url('../fonts/ofont_ru_CenturyGothic.woff') format('woff'),
+         url('../fonts/ofont_ru_CenturyGothic.ttf') format('truetype'),
+         url('../fonts/ofont_ru_CenturyGothic.svg#ofont_ru_CenturyGothic') format('svg');
 }
